@@ -1,5 +1,4 @@
 import Header from './componentes/Header'
-import axios from 'axios'
 import '../src/estilos/App.css'
 import { useEffect, useState } from 'react'
 import CourseCard from './componentes/CourseCard'
@@ -7,8 +6,9 @@ export default function App() {
   const [courses, setCourses] = useState([])
 
   async function getCourses() {
-    const courses = await axios.get('http://localhost:3000/api/courses')
-    setCourses(courses.data)
+    const req = await fetch('http://localhost:3000/api/courses')
+    const res= await req.json()
+    setCourses(res)
   }
 
   useEffect(() => {
