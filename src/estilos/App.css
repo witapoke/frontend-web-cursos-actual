@@ -1,0 +1,7 @@
+.app-container {
+  min-height: 100vh;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
